@@ -1,0 +1,24 @@
+{
+  "name": "online-newspaper-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build-css": "tailwindcss build ./src/css/style.css -o ./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bappi2097/online-newspaper-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bappi2097/online-newspaper-frontend/issues"
+  },
+  "homepage": "https://github.com/bappi2097/online-newspaper-frontend#readme",
+  "dependencies": {
+    "autoprefixer": "^10.2.1",
+    "tailwindcss": "^2.0.2"
+  }
+}
