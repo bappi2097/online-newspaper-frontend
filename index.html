@@ -5,16 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dainik Bongobani</title>
-  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" /> -->
   <link href="./public/css/style.css" rel="stylesheet" />
-  <!-- <style>
-      div {
-        background: blue;
-      }
-      [class^="w"] {
-        background: pink;
-      }
-    </style> -->
+  
+  <!--Debug css start-->
+  <!-- <link rel="stylesheet" href="./public/css/debug.css"> -->
+  <!--Debug Css End-->
 </head>
 
 <body class="font-sutonny">
@@ -25,7 +20,8 @@
           <div class="flex items-center">
             <span class="mx-2"
               onclick="document.querySelector('#sidebar').classList.remove('hidden'); document.querySelector('body').classList.add('overflow-hidden');">
-              <svg class="w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </span>
@@ -35,19 +31,21 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-              <form action="/" method="post" class="absolute flex hidden top-3" id="search"
+              <form action="/" method="post" class="absolute hidden top-3" id="search"
                 onmouseout="document.querySelector('#search').classList.add('hidden')">
-                <input type="text"
-                  class="h-10 bg-white border border-gray-300 rounded p-4 text-gray-600 text-sm focus:outline-none focus:border-gray-400"
-                  onmouseover="document.querySelector('#search').classList.remove('hidden')" />
-                <button class="bg-blue-600 p-2"
-                  onmouseover="document.querySelector('#search').classList.remove('hidden')">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    class="w-6 text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </button>
+                <div class="flex">
+                  <input type="text"
+                    class="h-10 bg-white border border-gray-300 rounded p-4 text-gray-600 text-sm focus:outline-none focus:border-gray-400"
+                    onmouseover="document.querySelector('#search').classList.remove('hidden')" />
+                  <button class="bg-blue-600 p-2"
+                    onmouseover="document.querySelector('#search').classList.remove('hidden')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      class="w-6 text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </button>
+                </div>
               </form>
           </div>
           <div class="mt-7 hidden md:block">
@@ -87,11 +85,11 @@
                 <div class="flex">
                   <div class="relative"
                     onmouseover="document.querySelector('#language').classList.replace('hidden', 'block');">
-                    <button class="block h-12 w-28 rounded-full overflow-hidden focus:outline-none">
+                    <button class="flex rounded-full overflow-hidden focus:outline-none">
                       <span class="text-lg text-gray-600">সংস্করণ:</span>
                       <span class="text-lg font-bold">বাংলা</span>
                     </button>
-                    <div class="absolute left-0 w-32 py-2 bg-white border rounded shadow-xl p-4 hidden" id="language">
+                    <div class="absolute w-28 left-0 py-2 bg-white border rounded shadow-xl p-4 hidden" id="language">
                       <div>
                         <input type="radio" name="language" id="bangla" selected />
                         <label for="bangla">বাংলা</label>
@@ -154,7 +152,7 @@
       </svg>
     </div>
     <div class="mt-4">
-      <ul class="text-lg font-bold">
+      <ul class="text-md font-bold">
         <li class="py-3 pl-2 border-b-2 border-gray-200 hover:bg-gray-100 hover:text-blue-900">
           <a href="#">সর্বশেষ</a>
         </li>
@@ -230,9 +228,9 @@
       </ul>
     </div>
   </aside>
-  <nav class="border-b-2 border-gray-300 py-2 hidden md:block bg-white">
+  <nav class="border-b-2 border-gray-300 z-50 py-2 hidden md:block bg-white text-md">
     <div class="container mx-auto">
-      <ul class="flex justify-center font-bold">
+      <ul class="flex flex-wrap justify-center font-bold">
         <li class="mx-5 hover:text-blue-900">
           <a href="#">সর্বশেষ</a>
         <li class="mx-5 hover:text-blue-900">
@@ -260,7 +258,7 @@
       </ul>
     </div>
   </nav>
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-2">
     <div class="md:block lg:flex">
       <div class="md:w-full lg:w-3/4">
         <div class="lg:flex lg:h-72">
@@ -268,10 +266,10 @@
             <div class="md:block lg:flex lg:items-center">
               <div class="w-full lg:w-2/3 md:flex items-center border-r-2 border-gray-200">
                 <div class="w-full md:w-1/2 px-3">
-                  <h2 class="text-3xl font-bold mb-3">
+                  <h2 class="text-2xl font-bold mb-3">
                     ইন্দোনেশিয়ায় ভূমিকম্পে নিহতের সংখ্যা বেড়ে ৩৪, আহত কয়েক শ
                   </h2>
-                  <p class="text-gray-500 mb-3">
+                  <p class="text-gray-500 mb-3 text-sm">
                     ইন্দোনেশিয়ার সুলাওয়েশি দ্বীপে শক্তিশালী এক ভূমিকম্পে ৩৪ জন
                     নিহত ও কয়েক শ মানুষ আহত হয়েছেন। ক্ষতিগ্রস্ত হয়েছে অনেক
                     ভবন।...
@@ -282,128 +280,140 @@
                   <img class="w-100"
                     src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F7b59e0cc-af28-4832-8185-5a8e6e9f5f32%2Findonesia_quake_1610679110427.jpg?rect=47%2C0%2C864%2C576&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0"
                     alt="" />
-                  <p class="text-gray-400 text-sm">
+                  <p class="text-gray-400 text-xs mt-2">
                     পশ্চিম সুলাওয়েশির বিধ্বস্ত গভর্নর ভবন | ছবি: রয়টার্স
                   </p>
                 </div>
               </div>
               <div class="md:w-full lg:w-1/3 border-r-2 border-gray-200 px-3">
-                <h2 class="text-2xl font-bold mb-3">
+                <h2 class="text-xl font-bold mb-3">
                   <span class="text-red-500">জেনারেল মঞ্জুর হত্যা</span>/চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু
                 </h2>
-                <p class="text-gray-500 mb-3 text-justify">
+                <p class="text-gray-500 mb-3 text-justify text-sm">
                   চট্টগ্রামে ছুরিকাঘাতে আহত হয়ে চিকিৎসাধীন অবস্থায় এক
                   কলেজছাত্রের মৃত্যু হয়েছে। পরিবারের ভাষ্য, মাদকের প্রতিবাদ
                   করায় তিনি খুন হয়েছেন। তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
                   পূর্ববিরোধের জেরে এই ...
                 </p>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
         </div>
         <div class="flex flex-wrap border-b-2 border-gray-200">
           <div class="w-full md:w-1/2 lg:w-1/3 p-2 border-r-2 border-gray-200 my-2">
-            <h2 class="text-2xl font-bold mb-3">
+            <h2 class="text-xl font-bold mb-3">
               চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু
             </h2>
-            <p class="text-gray-500 mb-3 text-justify">
+            <p class="text-gray-500 mb-3 text-justify text-sm">
               চট্টগ্রামে ছুরিকাঘাতে আহত হয়ে চিকিৎসাধীন অবস্থায় এক
               কলেজছাত্রের মৃত্যু হয়েছে। পরিবারের ভাষ্য, মাদকের প্রতিবাদ
               করায় তিনি খুন হয়েছেন। তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
               পূর্ববিরোধের জেরে এই ...
             </p>
-            <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+            <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 p-2 border-r-2 border-gray-200 my-2">
-            <h2 class="text-2xl font-bold mb-3">
+            <h2 class="text-xl font-bold mb-3">
               চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু
             </h2>
-            <p class="text-gray-500 mb-3 text-justify">
+            <p class="text-gray-500 mb-3 text-justify text-sm">
               চট্টগ্রামে ছুরিকাঘাতে আহত হয়ে চিকিৎসাধীন অবস্থায় এক
               কলেজছাত্রের মৃত্যু হয়েছে। পরিবারের ভাষ্য, মাদকের প্রতিবাদ
               করায় তিনি খুন হয়েছেন। তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
               পূর্ববিরোধের জেরে এই ...
             </p>
-            <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+            <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 p-2 border-r-2 border-gray-200 my-2">
-            <h2 class="text-2xl font-bold mb-3">
+            <h2 class="text-xl font-bold mb-3">
               চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু
             </h2>
-            <p class="text-gray-500 mb-3 text-justify">
+            <p class="text-gray-500 mb-3 text-justify text-sm">
               চট্টগ্রামে ছুরিকাঘাতে আহত হয়ে চিকিৎসাধীন অবস্থায় এক
               কলেজছাত্রের মৃত্যু হয়েছে। পরিবারের ভাষ্য, মাদকের প্রতিবাদ
               করায় তিনি খুন হয়েছেন। তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
               পূর্ববিরোধের জেরে এই ...
             </p>
-            <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+            <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
           </div>
         </div>
         <div class="flex flex-wrap my-2">
           <div class="w-full md:w-1/2 lg:w-1/3 border-r-2 border-b-2 border-gray-200 p-1 my-1">
             <div class="flex">
               <div class="">
-                <img class="w-32 h-24" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0" alt="">
+                <img class="w-32 h-24"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0"
+                  alt="">
               </div>
               <div class="px-2">
                 <h2 class="text-lg font-bold mb-2">চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু</h2>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 border-r-2 border-b-2 border-gray-200 p-1 my-1">
             <div class="flex">
               <div class="">
-                <img class="w-32 h-24" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0" alt="">
+                <img class="w-32 h-24"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0"
+                  alt="">
               </div>
               <div class="px-2">
                 <h2 class="text-lg font-bold mb-2">চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু</h2>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 border-r-2 border-b-2 border-gray-200 p-1 my-1">
             <div class="flex">
               <div class="">
-                <img class="w-32 h-24" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0" alt="">
+                <img class="w-32 h-24"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0"
+                  alt="">
               </div>
               <div class="px-2">
                 <h2 class="text-lg font-bold mb-2">চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু</h2>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 border-r-2 border-b-2 border-gray-200 p-1 my-1">
             <div class="flex">
               <div class="">
-                <img class="w-32 h-24" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0" alt="">
+                <img class="w-32 h-24"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0"
+                  alt="">
               </div>
               <div class="px-2">
                 <h2 class="text-lg font-bold mb-2">চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু</h2>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 border-r-2 border-b-2 border-gray-200 p-1 my-1">
             <div class="flex">
               <div class="">
-                <img class="w-32 h-24" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0" alt="">
+                <img class="w-32 h-24"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0"
+                  alt="">
               </div>
               <div class="px-2">
                 <h2 class="text-lg font-bold mb-2">চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু</h2>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/3 border-r-2 border-b-2 border-gray-200 p-1 my-1">
             <div class="flex">
               <div class="">
-                <img class="w-32 h-24" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0" alt="">
+                <img class="w-32 h-24"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2Fafd80ab4-5647-4c57-b02a-d3cd004e703b%2F_DH0781_20210109_20210109122609__IPU2094.JPG?rect=0%2C71%2C1707%2C1138&auto=format%2Ccompress&fmt=webp&format=webp&w=128&dpr=1.0"
+                  alt="">
               </div>
               <div class="px-2">
                 <h2 class="text-lg font-bold mb-2">চট্টগ্রামে ছুরিকাঘাতে আহত কলেজছাত্রের মৃত্যু</h2>
-                <span class="block text-gray-400 mb-3 text-sm">৩৮ মিনিট আগে</span>
+                <span class="block text-gray-400 mb-3 text-xs">৩৮ মিনিট আগে</span>
               </div>
             </div>
           </div>
@@ -412,9 +422,12 @@
           <div class="w-full md:container lg:w-1/3 pr-3">
             <div class="border-b-2 border-gray-200">
               <ul class="flex font-bold">
-                <li id="nav-tab-1" class="nav-tab p-2 cursor-pointer border-b-4 border-red-400" onclick="tabChanged(this, '1')">সুখবর</li>
-                <li id="nav-tab-2" class="nav-tab p-2 cursor-pointer" onclick="tabChanged(this, '2')">পঠিত</li>
-                <li id="nav-tab-3" class="nav-tab p-2 cursor-pointer" onclick="tabChanged(this, '3')">আলোচিত</li>
+                <li><a id="nav-tab-1" class="nav-tab p-2 py-1 cursor-pointer border-b-4 border-red-400"
+                    onclick="tabChanged(this, '1')">সুখবর</a></li>
+                <li><a id="nav-tab-2" class="nav-tab p-2 py-1 cursor-pointer" onclick="tabChanged(this, '2')">পঠিত</a>
+                </li>
+                <li><a id="nav-tab-3" class="nav-tab p-2 py-1 cursor-pointer" onclick="tabChanged(this, '3')">আলোচিত</a>
+                </li>
               </ul>
             </div>
             <div id="tab-1" class="tab">
@@ -484,38 +497,44 @@
               </div>
             </div>
           </div>
-          <div class="w-2/3">
+          <div class="w-full md:w-2/3">
             <span class="flex items-center text-lg font-bold mx-2">
               <span class="w-5 h-5 bg-blue-400 rounded-full mr-2"></span>
               একটু থামুন
             </span>
             <div class="relative m-2">
-              <img class="w-full h-96" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F7c3612f0-6b50-4c0f-b942-686f3c4502c6%2FBoss_Idea.jpg?rect=0%2C0%2C1600%2C900&auto=format%2Ccompress&fmt=webp&format=webp&w=610&dpr=1.0" alt="">
+              <img class="w-full h-80 md:h-96"
+                src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F7c3612f0-6b50-4c0f-b942-686f3c4502c6%2FBoss_Idea.jpg?rect=0%2C0%2C1600%2C900&auto=format%2Ccompress&fmt=webp&format=webp&w=610&dpr=1.0"
+                alt="">
               <div class="absolute top-0 w-full h-full bg-gradient-to-t from-black"></div>
-              <div class="absolute top-56 w-full px-5">
+              <div class="absolute top-32 md:top-56 w-full px-5">
                 <span class="text-yellow-400 block">করোনা</span>
-                <h2 class="text-3xl text-white font-bold mt-2">একবার করোনা হলে সুরক্ষিত থাকা যায়</h2>
+                <h2 class="text-2xl text-white font-bold mt-2">একবার করোনা হলে সুরক্ষিত থাকা যায়</h2>
                 <p class="text-white text-lg my-2">তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
-                পূর্ববিরোধের জেরে এই ...</p>
-              <span class="text-gray-200 text-sm block mt-2">২ ঘণ্টা আগে</span>
+                  পূর্ববিরোধের জেরে এই ...</p>
+                <span class="text-gray-200 text-sm block mt-2">২ ঘণ্টা আগে</span>
               </div>
             </div>
             <div class="flex flex-wrap">
-              <div class="w-1/2 p-2">
-                <img class="w-full h-52" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F3a2dce5e-e7a1-4a39-b64a-536906b13e4f%2FJR_Thumb_28_10_2020.jpg?auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0" alt="">
+              <div class="w-full md:w-1/2 p-2">
+                <img class="w-full h-52"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F3a2dce5e-e7a1-4a39-b64a-536906b13e4f%2FJR_Thumb_28_10_2020.jpg?auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0"
+                  alt="">
                 <span class="text-gray-600 text-lg block my-2">পুলিশ</span>
                 <h2 class="text-xl font-bold mt-2">একবার করোনা হলে সুরক্ষিত থাকা যায়</h2>
-                <p class="my-2">তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
-                পূর্ববিরোধের জেরে এই ...</p>
-              <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
+                <p class="my-2 text-sm">তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
+                  পূর্ববিরোধের জেরে এই ...</p>
+                <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
               </div>
-              <div class="w-1/2 p-2">
-                <img class="w-full h-52" src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F3a2dce5e-e7a1-4a39-b64a-536906b13e4f%2FJR_Thumb_28_10_2020.jpg?auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0" alt="">
+              <div class="w-full md:w-1/2 p-2">
+                <img class="w-full h-52"
+                  src="https://images.prothomalo.com/prothomalo-bangla%2F2021-01%2F3a2dce5e-e7a1-4a39-b64a-536906b13e4f%2FJR_Thumb_28_10_2020.jpg?auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0"
+                  alt="">
                 <span class="text-gray-600 text-lg block my-2">পুলিশ</span>
                 <h2 class="text-xl font-bold mt-2">একবার করোনা হলে সুরক্ষিত থাকা যায়</h2>
-                <p class="my-2">তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
-                পূর্ববিরোধের জেরে এই ...</p>
-              <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
+                <p class="my-2 text-sm">তবে পুলিশ ও স্থানীয় ব্যক্তিরা বলছেন,
+                  পূর্ববিরোধের জেরে এই ...</p>
+                <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
               </div>
             </div>
           </div>
@@ -523,9 +542,48 @@
       </div>
       <div class="w-1/4 border-gray-200 ml-2"></div>
     </div>
+    <div class="p-3">
+      <h2 class="text-black text-xl font-bold flex items-center">স্থানীয় 
+        <span class="text-red-500">
+          <svg class="w-5"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+        </h2>
+        <div class="flex flex-wrap py-2">
+          <div class="w-full md:w-1/2 lg:w-1/4 px-2 shadow my-2">
+            <img class="w-full" src="https://images.prothomalo.com/prothomalo-bangla%2F2020-09%2F3a2dcf21-2dc8-4217-b915-512d9085abfe%2Fprothomalo_bangla_2020_08_4da1457b_541d_446b_a424_29f4dd539e55_Untitled_6.png?rect=7%2C0%2C2034%2C1144&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0" alt="">
+            <h3 class="text-lg font-bold mt-2">বিচারাধীন বিষয়ে সংবাদ পরিবেশনে ৭১ টিভি সতর্ক থাকবে, প্রত্যাশা হাইকোর্টের</h3>
+            <p class="text-gray-600 text-sm my-2">পলাতক ও অভিযুক্ত ব্যক্তির মন্তব্য, কথোপকথন, সাক্ষাৎকার, টক শোসহ বিচারাধীন বিষয়ে সংবাদ </p>
+            <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-2 shadow my-2">
+            <img class="w-full" src="https://images.prothomalo.com/prothomalo-bangla%2F2020-09%2F3a2dcf21-2dc8-4217-b915-512d9085abfe%2Fprothomalo_bangla_2020_08_4da1457b_541d_446b_a424_29f4dd539e55_Untitled_6.png?rect=7%2C0%2C2034%2C1144&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0" alt="">
+            <h3 class="text-lg font-bold mt-2">বিচারাধীন বিষয়ে সংবাদ পরিবেশনে ৭১ টিভি সতর্ক থাকবে, প্রত্যাশা হাইকোর্টের</h3>
+            <p class="text-gray-600 text-sm my-2">পলাতক ও অভিযুক্ত ব্যক্তির মন্তব্য, কথোপকথন, সাক্ষাৎকার, টক শোসহ বিচারাধীন বিষয়ে সংবাদ </p>
+            <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-2 shadow my-2">
+            <img class="w-full" src="https://images.prothomalo.com/prothomalo-bangla%2F2020-09%2F3a2dcf21-2dc8-4217-b915-512d9085abfe%2Fprothomalo_bangla_2020_08_4da1457b_541d_446b_a424_29f4dd539e55_Untitled_6.png?rect=7%2C0%2C2034%2C1144&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0" alt="">
+            <h3 class="text-lg font-bold mt-2">বিচারাধীন বিষয়ে সংবাদ পরিবেশনে ৭১ টিভি সতর্ক থাকবে, প্রত্যাশা হাইকোর্টের</h3>
+            <p class="text-gray-600 text-sm my-2">পলাতক ও অভিযুক্ত ব্যক্তির মন্তব্য, কথোপকথন, সাক্ষাৎকার, টক শোসহ বিচারাধীন বিষয়ে সংবাদ </p>
+            <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/4 px-2 shadow my-2">
+            <img class="w-full" src="https://images.prothomalo.com/prothomalo-bangla%2F2020-09%2F3a2dcf21-2dc8-4217-b915-512d9085abfe%2Fprothomalo_bangla_2020_08_4da1457b_541d_446b_a424_29f4dd539e55_Untitled_6.png?rect=7%2C0%2C2034%2C1144&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0" alt="">
+            <h3 class="text-lg font-bold mt-2">বিচারাধীন বিষয়ে সংবাদ পরিবেশনে ৭১ টিভি সতর্ক থাকবে, প্রত্যাশা হাইকোর্টের</h3>
+            <p class="text-gray-600 text-sm my-2">পলাতক ও অভিযুক্ত ব্যক্তির মন্তব্য, কথোপকথন, সাক্ষাৎকার, টক শোসহ বিচারাধীন বিষয়ে সংবাদ </p>
+            <span class="text-gray-500 text-sm block mt-2">২ ঘণ্টা আগে</span>
+          </div>
+        </div>
+    </div>
+
   </div>
-  <footer class="h-32 w-screen"></footer>
-  <script src="./assets/js/index.js"></script>
+  <footer class="container p-10 shadow w-screen mx-auto mb-1">
+    <p class="block text-center text-lg font-bold">Develop By Bappi Saha</p>
+  </footer>
+  <script src="./public/js/index.js"></script>
 </body>
 
 </html>
